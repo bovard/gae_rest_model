@@ -6,7 +6,7 @@ from google.appengine.ext import ndb
 class Operations:
     CREATE = "CREATE"
     READ = "READ"
-    UPDATE = "UPDTATE"
+    UPDATE = "UPDATE"
     DELETE = "DELETE"
     CRUD = ["CREATE", "READ", "UPDATE", "DELETE"]
 
@@ -54,7 +54,7 @@ class RestHandler(webapp2.RequestHandler):
 class RestModel(ndb.Model):
 
     def __init__(self, *args, **kwargs):
-        self.operations = CRUD
+        self.operations = Operations.CRUD
         self.category = None
         super(RestModel, self).__init__()
 
